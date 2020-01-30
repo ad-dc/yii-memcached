@@ -33,6 +33,7 @@ class Bootstrap implements BootstrapInterface
                     'class'        => MemCache::class,
                     'persistentId' => getenv('MEMCACHE_PERSISTENT') ? 'cache' : null,
                     'servers'      => $this->getMemcachedServers(),
+                    'keyPrefix'    => getenv('MEMCACHE_PREFIX') ? getenv('MEMCACHE_PREFIX') : '',
                     'options'      => $this->getOptions(),
                     'useMemcached' => true
                 ]);
